@@ -1,0 +1,417 @@
+html, body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: hsl(229, 24%, 87%);
+  margin: 0;
+}
+
+:root {
+  --nav-width: 270px;
+}
+
+section {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+p {
+  color: hsl(231, 11%, 63%);
+  margin: 0 0 30px 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 35px 0 5px 0;
+}
+
+
+nav {
+  background-image: url("assets/images/bg-sidebar-desktop.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  width: var(--nav-width);
+}
+
+nav ul {
+  display: flex;
+
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav li {
+  margin: 10px 0;
+  display: flex;
+}
+
+nav li p,
+nav li h6 {
+  margin: 2px 0;
+  text-transform: uppercase;
+}
+
+nav li p {
+  font-size: 12px;
+}
+
+nav li h6 {
+  font-size: 14px;
+}
+
+.nav-1,
+.nav-2,
+.nav-3,
+.nav-4 {
+  border: 1px solid hsl(0, 0%, 100%);
+  background-color: transparent;
+  border-radius: 100%;
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+  padding: 5px 10px;
+  margin: 0 15px 5px 0;
+  
+}
+
+.nav-active {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(229, 24%, 87%);
+  font-weight: 900;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  height: 15%;
+  margin-top: 20px;
+  padding-right: 40px;
+}
+
+input[type="text"] {
+  position: relative;
+  left: 0;
+  margin: 3px 100px 0 0;
+  padding: 10px 14px; 
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+  outline: none;
+  border: 1px solid hsl(231, 11%, 63%);  
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-btn {
+  font-weight: 700;
+  color: hsl(231, 11%, 63%);
+  border: none;
+  background-color: transparent;
+}
+
+.back-btn:hover {
+  color: hsl(213, 96%, 18%);
+  cursor: pointer;
+}
+
+.next-btn {
+  background-color: hsl(213, 96%, 18%);
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+
+.next-btn:hover {
+  background-color: hsl(228, 45%, 44%);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.selectable-plan-options {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.plan-option {
+  cursor: pointer;
+  margin: 0 5px;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  padding: 15px 4vw 15px 15px;
+  text-align: left;
+}
+
+[type=radio]:checked + .plan-option {
+  border: 1px solid hsl(228, 45%, 44%)
+}
+
+
+
+.plan-button p {
+  margin-bottom: 0;
+}
+
+.slide {
+  background-color: hsl(231, 100%, 99%);
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.plan-monthly {
+  position: absolute;
+  right: 70px;
+  font-weight: 700;
+  color: hsl(231, 11%, 63%);
+}
+
+.plan-yearly {
+  position: absolute;
+  left: 70px;
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  right: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(213, 96%, 18%);
+}
+
+input:checked + .slider .plan-monthly {
+  color: hsl(213, 96%, 18%);
+}
+
+input:checked + .slider .plan-yearly {
+  color: hsl(231, 11%, 63%)
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(213, 96%, 18%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.attribution {
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1151px) {
+
+  section {
+    justify-content: center;
+  }
+
+  .card {
+    height: 560px;
+  }
+
+  .content {
+    margin: 50px 100px;
+    flex: 20%;
+  }
+
+  .btns {
+    position: relative;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .plan-option {
+    width: 84px;
+  }
+}
+
+@media (max-width: 1150px) {
+  :root {
+    --nav-width: 100vw;
+  }
+  .card {
+    flex-direction: column;
+    padding: 25px 20px;
+    margin-top: 150px;
+  }
+
+
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    z-index: -1;
+    background-position: 25% 80%;
+    height: 25vh;
+  }
+
+  nav ul {
+    display: flex;
+    padding: 0;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  .btns {
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .selectable-plan-options {
+    flex-direction: column;
+  }
+
+  .plan-option {
+    display: flex;
+  }
+}
+
+@media (max-width: 650px) { 
+
+  .card {
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-width: 80vw;
+  }
+
+  .step-description {
+    display: none;
+  }
+
+  .nav-1,
+  .nav-2,
+  .nav-3,
+  .nav-4 {
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+
+}
