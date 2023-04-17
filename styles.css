@@ -1,7 +1,19 @@
-html, body {
+html,
+body {
   font-family: "Ubuntu", sans-serif;
   background-color: hsl(229, 24%, 87%);
+  color: hsl(213, 96%, 18%);
   margin: 0;
+
+  /*
+    Disallow word selection
+  */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 :root {
@@ -34,7 +46,6 @@ h4 {
   font-weight: 900;
   margin: 35px 0 5px 0;
 }
-
 
 nav {
   background-image: url("assets/images/bg-sidebar-desktop.svg");
@@ -82,7 +93,6 @@ nav li h6 {
   font-size: 12px;
   padding: 5px 10px;
   margin: 0 15px 5px 0;
-  
 }
 
 .nav-active {
@@ -119,7 +129,7 @@ input[type="text"] {
   position: relative;
   left: 0;
   margin: 3px 100px 0 0;
-  padding: 10px 14px; 
+  padding: 10px 14px;
   border: 1px solid hsl(229, 24%, 87%);
   border-radius: 5px;
   font-size: 14px;
@@ -130,7 +140,7 @@ input[type="text"] {
 input[type="text"]:focus,
 input[type="text"]:hover {
   outline: none;
-  border: 1px solid hsl(231, 11%, 63%);  
+  border: 1px solid hsl(231, 11%, 63%);
 }
 
 .btns {
@@ -177,10 +187,11 @@ input[type="text"]:hover {
   display: flex;
   padding: 0;
   margin: 0;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-[type=radio] {
+[type="radio"] {
   position: absolute;
   opacity: 0;
   height: 0;
@@ -197,14 +208,18 @@ input[type="text"]:hover {
   text-align: left;
 }
 
-[type=radio]:checked + .plan-option {
-  border: 1px solid hsl(228, 45%, 44%)
+[type="radio"]:checked + .plan-option {
+  border: 1px solid hsl(228, 45%, 44%);
 }
-
-
 
 .plan-button p {
   margin-bottom: 0;
+}
+
+.yearly-label {
+  color: hsl(228, 45%, 44%);
+  font-size: 12px;
+  padding-top: 8px;
 }
 
 .slide {
@@ -280,7 +295,7 @@ input:checked + .slider .plan-monthly {
 }
 
 input:checked + .slider .plan-yearly {
-  color: hsl(231, 11%, 63%)
+  color: hsl(231, 11%, 63%);
 }
 
 input:focus + .slider {
@@ -311,8 +326,59 @@ input:checked + .slider:before {
   color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 1151px) {
+/* Add-ons */
 
+.selectable-addons {
+  margin-top: 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.selectable-addons li {
+  position: relative;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  height: 20px;
+  width: 20px;
+}
+
+[type="checkbox"]:checked {
+  accent-color: hsl(243, 100%, 62%);
+}
+
+[type="checkbox"]:checked + div,
+[type="checkbox"]:hover + div {
+  border: 1px solid hsl(228, 45%, 44%);
+}
+
+.addon-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  padding: 25px 25px 25px 55px;
+}
+
+.addon-option h4,
+p {
+  margin: 0;
+}
+
+.addon-price {
+  color: hsl(228, 45%, 44%);
+  text-align: right;
+}
+
+@media (min-width: 1151px) {
   section {
     justify-content: center;
   }
@@ -322,7 +388,7 @@ input:checked + .slider:before {
   }
 
   .content {
-    margin: 50px 100px;
+    margin: 15px 100px;
     flex: 20%;
   }
 
@@ -349,7 +415,6 @@ input:checked + .slider:before {
     padding: 25px 20px;
     margin-top: 150px;
   }
-
 
   nav {
     position: absolute;
@@ -384,23 +449,52 @@ input:checked + .slider:before {
 
   .selectable-plan-options {
     flex-direction: column;
+    gap: 20px;
   }
 
   .plan-option {
     display: flex;
+    gap: 15px;
+  }
+
+  .column-wrapper h4 {
+    margin-top: 5px;
   }
 }
 
-@media (max-width: 650px) { 
-
+@media (max-width: 650px) {
   .card {
     flex-wrap: wrap;
     overflow: hidden;
     max-width: 80vw;
   }
 
+  h1 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .addon-option > * p {
+    font-size: 12px;
+  }
+
+  .addon-price {
+    font-size: 10px;
+  }
+
   .step-description {
     display: none;
+  }
+
+  .addon-option {
+    padding: 15px 15px 15px 55px;
+  }
+
+  [type="checkbox"] {
+    top: 30%;
   }
 
   .nav-1,
@@ -413,5 +507,4 @@ input:checked + .slider:before {
   nav ul li {
     margin: 10px;
   }
-
 }

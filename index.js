@@ -52,6 +52,8 @@ activeContentList.addItem("#info", ".nav-1");
 activeContentList.addItem("#plan", ".nav-2");
 activeContentList.addItem("#addons", ".nav-3");
 
+let isYearlyToggled = true;
+
 $(".next-btn").click(() => {
   if (activeContentList.isActiveNodeFirstItem()) {
     $(".back-btn").removeClass("visibility-hidden");
@@ -82,3 +84,9 @@ $(".back-btn").click(() => {
     $(".back-btn").addClass("visibility-hidden");
   }
 });
+
+$(".plan-checkbox").click(() => {
+  isYearlyToggled = $(".plan-checkbox").prop("checked");
+  $(".yearly-item").toggle("hidden");
+  $(".monthly-item").toggle("hidden");
+})
