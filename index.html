@@ -55,21 +55,30 @@
         </nav>
         <!-- Step 1 start -->
         <!-- Step 2 start -->
-        <form class="content">
+        <form action="#" class="content">
           <div id="info">
             <h1>Personal info</h1>
             <p>Please provide your name, email address, and phone number.</p>
             <div class="input">
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="e.g. Stephen King" />
+              <div class="input-labels">
+                <label for="name">Name</label>
+                <p class="input-error-name hidden"></span>
+              </div>
+              <input id="name" class="info-input" name="name" type="text" placeholder="e.g. Stephen King" required />
             </div>
             <div class="input">
-              <label for="mail"> Email Address </label>
-              <input id="mail" type="text" placeholder="e.g. stephenking@lorem.com" />
+              <div class="input-labels">
+                <label for="mail"> Email Address </label>
+                <p class="input-error-mail hidden"></span>
+              </div>
+              <input id="mail" class="info-input" name="mail" type="email" placeholder="e.g. stephenking@lorem.com" required />
             </div>
             <div class="input">
-              <label for="phone-number"> Phone Number </label>
-              <input id="phone-number" type="text" placeholder="e.g. +1 234 567 890" />
+              <div class="input-labels">
+                <label for="phone-number"> Phone Number </label>
+                <p class="input-error-phone hidden"></span>
+              </div>
+              <input id="phone-number" class="info-input" name="phone-number" type="text" placeholder="e.g. +1 234 567 890" required/>
             </div>
           </div>
           <div id="plan" class="hidden">
@@ -174,48 +183,31 @@
               </li>
             </ul>
           </div>
+          <div id="summary" class="hidden">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+            <div class="summary">
+              <!-- Dynamically add subscription and add-on selections here -->
+    
+              <div class="summary-item">
+                <p class="summary-item-name">Total (per month/year)</p>
+                <p class="summary-item-price"></p>
+              </div>
+            </div>
+          </div>
+          <div id="confirm" class="centered hidden">
+            <h1>Thank you!</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support,
+              please feel free to email us at support@loremgaming.com.
+            </p>
+          </div>
           <div class="btns">
             <button class="back-btn visibility-hidden" type="button">Go Back</button>
             <button class="next-btn" type="button">Next Step</button>
           </div>
         </form>
       </div>
-
-      <!-- Step 3 start -->
-      <div class="card hidden"></div>
-
-      <!-- Step 3 end -->
-
-      <!-- Step 4 start -->
-
-      <div class="card hidden">
-        <h1>Finishing up</h1>
-        <p>Double-check everything looks OK before confirming.</p>
-        <div class="summary">
-          <!-- Dynamically add subscription and add-on selections here -->
-
-          <div class="summary-item">
-            <p class="summary-item-name">Total (per month/year)</p>
-            <p class="summary-item-price"></p>
-          </div>
-        </div>
-
-        <button type="button">Back</button>
-        <button type="button">Confirm</button>
-      </div>
-
-      <!-- Step 4 end -->
-
-      <!-- Step 5 start -->
-      <div class="card centered hidden">
-        <h1>Thank you!</h1>
-        <p>
-          Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support,
-          please feel free to email us at support@loremgaming.com.
-        </p>
-      </div>
-
-      <!-- Step 5 end -->
 
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by

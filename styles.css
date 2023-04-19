@@ -114,6 +114,11 @@ nav li h6 {
   justify-content: space-between;
 }
 
+.input-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
 label {
   font-size: 14px;
   font-weight: 500;
@@ -122,25 +127,37 @@ label {
 .input {
   height: 15%;
   margin-top: 20px;
-  padding-right: 40px;
+  
 }
 
-input[type="text"] {
+.info-input {
   position: relative;
   left: 0;
-  margin: 3px 100px 0 0;
-  padding: 10px 14px;
+  margin: 3px 0 0 0;
+  padding: 10px 0 10px 14px;
   border: 1px solid hsl(229, 24%, 87%);
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  width: 100%;
+  width: calc(100% - 14px);
 }
 
-input[type="text"]:focus,
-input[type="text"]:hover {
+.info-input:focus,
+.info-input:hover {
   outline: none;
   border: 1px solid hsl(231, 11%, 63%);
+}
+
+.input-error-name,
+.input-error-mail,
+.input-error-phone {
+  color: hsl(354, 84%, 57%);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.error-outline {
+  border: 1px solid hsl(354, 84%, 57%);
 }
 
 .btns {
