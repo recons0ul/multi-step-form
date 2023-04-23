@@ -20,6 +20,14 @@ body {
   --nav-width: 270px;
 }
 
+a {
+  color: hsl(231, 11%, 63%)
+}
+
+a:hover {
+  color: hsl(228, 45%, 44%)
+}
+
 section {
   position: absolute;
   display: flex;
@@ -233,7 +241,7 @@ label {
   margin-bottom: 0;
 }
 
-.yearly-label {
+.plan-benefit {
   color: hsl(228, 45%, 44%);
   font-size: 12px;
   padding-top: 8px;
@@ -395,6 +403,82 @@ p {
   text-align: right;
 }
 
+.summary-selection {
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 10px;
+}
+
+.plan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.plan-item h4 {
+  margin: 0;
+}
+
+hr {
+  border: 1px solid hsl(229, 24%, 87%);
+  margin: 0;
+  width: 75%;
+  margin-left: 12.5%;
+}
+
+.addon-items {
+  list-style-type: none;
+}
+
+.addon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.addon-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.summary-item-price {
+  margin: 0;
+  color: hsl(243, 100%, 62%);
+}
+
+#confirm {
+  height: 100%;
+  padding: 40px 0;
+}
+
+.confirm-content {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.confirm-content h1 {
+  margin-top: 15px;
+}
+
+.confirm-content img {
+  width: 50px;
+}
+
 @media (min-width: 1151px) {
   section {
     justify-content: center;
@@ -402,6 +486,8 @@ p {
 
   .card {
     height: 560px;
+    width: 75vw;
+    max-width: 1000px;
   }
 
   .content {
@@ -431,6 +517,7 @@ p {
     flex-direction: column;
     padding: 25px 20px;
     margin-top: 150px;
+    width: 75vw;
   }
 
   nav {
@@ -474,7 +561,9 @@ p {
     gap: 15px;
   }
 
-  .column-wrapper h4 {
+  .arcade-plan h4,
+  .advanced-plan h4,
+  .pro-plan h4 {
     margin-top: 5px;
   }
 }

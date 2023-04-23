@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="styles.css" />
 
     <title>Frontend Mentor | Multi-step form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
   </head>
   <body>
     <section>
@@ -62,23 +59,35 @@
             <div class="input">
               <div class="input-labels">
                 <label for="name">Name</label>
-                <p class="input-error-name hidden"></span>
+                <p class="input-error-name hidden"></p>
               </div>
               <input id="name" class="info-input" name="name" type="text" placeholder="e.g. Stephen King" required />
             </div>
             <div class="input">
               <div class="input-labels">
                 <label for="mail"> Email Address </label>
-                <p class="input-error-mail hidden"></span>
+                <p class="input-error-mail hidden"></p>
               </div>
-              <input id="mail" class="info-input" name="mail" type="email" placeholder="e.g. stephenking@lorem.com" required />
+              <input
+                id="mail"
+                class="info-input"
+                name="mail"
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+                required />
             </div>
             <div class="input">
               <div class="input-labels">
                 <label for="phone-number"> Phone Number </label>
-                <p class="input-error-phone hidden"></span>
+                <p class="input-error-phone hidden"></p>
               </div>
-              <input id="phone-number" class="info-input" name="phone-number" type="text" placeholder="e.g. +1 234 567 890" required/>
+              <input
+                id="phone-number"
+                class="info-input"
+                name="phone-number"
+                type="text"
+                placeholder="e.g. +1 234 567 890"
+                required />
             </div>
           </div>
           <div id="plan" class="hidden">
@@ -87,42 +96,39 @@
             <ul class="selectable-plan-options">
               <li>
                 <label>
-                  <input type="radio" name="chosen-plan" class="plan-button" />
+                  <input type="radio" name="plan-option" class="plan-radiobutton" />
                   <div class="plan-option">
-                    <img class="plan-icon" src="assets/images/icon-arcade.svg" alt="arcarde-icon" />
-                    <div class="column-wrapper">
+                    <img class="plan-icon" src="assets/images/icon-arcade.svg" alt="arcade-icon" />
+                    <div class="arcade-plan">
                       <h4>Arcade</h4>
-                      <p class="yearly-item">$90/yr</p>
-                      <p class="monthly-item hidden">$9/mo</p>
-                      <p class="yearly-label yearly-item">2 months free</p>
+                      <p class="plan-price-item">$90/yr</p>
+                      <p class="plan-benefit">2 months free</p>
                     </div>
                   </div>
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="radio" name="chosen-plan" class="plan-button" />
+                  <input type="radio" name="plan-option" class="plan-radiobutton" checked />
                   <div class="plan-option">
-                    <img class="plan-icon" src="assets/images/icon-advanced.svg" alt="arcarde-icon" />
-                    <div class="column-wrapper">
+                    <img class="plan-icon" src="assets/images/icon-advanced.svg" alt="advanced-icon" />
+                    <div class="advanced-plan">
                       <h4>Advanced</h4>
-                      <p class="yearly-item">$120/yr</p>
-                      <p class="monthly-item hidden">$12/mo</p>
-                      <p class="yearly-label yearly-item">2 months free</p>
+                      <p class="plan-price-item">$120/yr</p>
+                      <p class="plan-benefit">2 months free</p>
                     </div>
                   </div>
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="radio" name="chosen-plan" class="plan-button" />
+                  <input type="radio" name="plan-option" class="plan-radiobutton" />
                   <div class="plan-option">
-                    <img class="plan-icon" src="assets/images/icon-pro.svg" alt="arcarde-icon" />
-                    <div class="column-wrapper">
+                    <img class="plan-icon" src="assets/images/icon-pro.svg" alt="pro-icon" />
+                    <div class="pro-plan">
                       <h4>Pro</h4>
-                      <p class="yearly-item">$150/yr</p>
-                      <p class="monthly-item hidden">$15/mo</p>
-                      <p class="yearly-label yearly-item">2 months free</p>
+                      <p class="plan-price-item">$150/yr</p>
+                      <p class="plan-benefit">2 months free</p>
                     </div>
                   </div>
                 </label>
@@ -145,39 +151,36 @@
               <li>
                 <label>
                   <input type="checkbox" />
-                  <div class="addon-option">
+                  <div class="addon-option online-service">
                     <div>
                       <h4>Online service</h4>
                       <p>Access to multiplayer games</p>
                     </div>
-                    <p class="addon-price yearly-item">+$10/yr</p>
-                    <p class="addon-price monthly-item hidden">+$1/mo</p>
+                    <p class="addon-price">+$10/yr</p>
                   </div>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="checkbox" />
-                  <div class="addon-option">
+                  <div class="addon-option storage">
                     <div>
                       <h4>Larger storage</h4>
                       <p>Extra 1TB of cloud save</p>
                     </div>
-                    <p class="addon-price yearly-item">+$20/yr</p>
-                    <p class="addon-price monthly-item hidden">+$20/mo</p>
+                    <p class="addon-price">+$20/yr</p>
                   </div>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="checkbox" />
-                  <div class="addon-option">
+                  <div class="addon-option customizable">
                     <div>
                       <h4>Customizable Profile</h4>
                       <p>Custom theme on your profile</p>
                     </div>
-                    <p class="addon-price yearly-item">+$20/yr</p>
-                    <p class="addon-price monthly-item hidden">+$2/mo</p>
+                    <p class="addon-price">+$20/yr</p>
                   </div>
                 </label>
               </li>
@@ -186,22 +189,36 @@
           <div id="summary" class="hidden">
             <h1>Finishing up</h1>
             <p>Double-check everything looks OK before confirming.</p>
-            <div class="summary">
-              <!-- Dynamically add subscription and add-on selections here -->
-    
-              <div class="summary-item">
-                <p class="summary-item-name">Total (per month/year)</p>
-                <p class="summary-item-price"></p>
+            <!-- Dynamically add subscription and add-on selections here -->
+            <div class="summary-selection">
+              <div class="plan-item">
+                <div>
+                  <h4 class="summary-plan"></h4>
+                  <a href="#" class="summary-plan-change">Change</a>
+                </div>
+                <h4 class="summary-plan-price"></h4>
+              </div>
+              <hr />
+              <div class="addon-items">
+                <ul class="addon-list"></ul>
               </div>
             </div>
+            <div class="summary-item">
+              <p class="summary-item-name">Total (per month/year)</p>
+              <h2 class="summary-item-price"></h2>
+            </div>
           </div>
-          <div id="confirm" class="centered hidden">
-            <h1>Thank you!</h1>
-            <p>
-              Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support,
-              please feel free to email us at support@loremgaming.com.
-            </p>
-          </div>
+          <div id="confirm" class="hidden">
+            <div class="confirm-content">
+
+              <img class="thank-you-icon" src="assets/images/icon-thank-you.svg" alt="thank-you-icon">
+              <h1>Thank you!</h1>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need
+                support, please feel free to email us at support@loremgaming.com.
+              </p>
+            </div>
+            </div>
           <div class="btns">
             <button class="back-btn visibility-hidden" type="button">Go Back</button>
             <button class="next-btn" type="button">Next Step</button>
