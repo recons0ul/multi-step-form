@@ -115,7 +115,6 @@ $(".next-btn").click(() => {
 
     const isMonthly = $(".plan-checkbox").is(":checked");
     let planName = planType + " (" + (isMonthly ? "Monthly" : "Yearly") + ")";
-    console.log(planName);
 
     $(".summary-plan").text(planName);
     $(".summary-plan-price").text(planPrice);
@@ -177,11 +176,11 @@ $(".next-btn").click(() => {
         );
       });
 
-      if (isMonthly) {
-        $(".summary-item-price").text("+$" + sum + "/mo");
-      } else {
-        $(".summary-item-price").text("+$" + sum + "/yr");
-      }
+    if (isMonthly) {
+      $(".summary-item-price").text("+$" + sum + "/mo");
+    } else {
+      $(".summary-item-price").text("+$" + sum + "/yr");
+    }
   }
 
   if (activeContentList.isActiveNodeLastItem()) {
@@ -232,7 +231,6 @@ $(".plan-checkbox").click(() => {
     $(".addon-option.online-service .addon-price").text(ONLINE_SERVICE_PRICE_MONTHLY);
     $(".addon-option.storage .addon-price").text(STORAGE_PRICE_MONTHLY);
     $(".addon-option.customizable .addon-price").text(CUSTOMIZABLE_PRICE_MONTHLY);
-    console.log("-> monthly");
   } else {
     // yearly will be toggled now
     $(".arcade-plan .plan-price-item").text(ARCADE_PRICE_YEARLY);
@@ -242,7 +240,6 @@ $(".plan-checkbox").click(() => {
     $(".addon-option.online-service .addon-price").text(ONLINE_SERVICE_PRICE_YEARLY);
     $(".addon-option.storage .addon-price").text(STORAGE_PRICE_YEARLY);
     $(".addon-option.customizable .addon-price").text(CUSTOMIZABLE_PRICE_YEARLY);
-    console.log("-> Yearly");
   }
 });
 
@@ -298,7 +295,6 @@ function resetErrorState() {
 }
 
 $(".summary-plan-change").click(() => {
-
   $(".addon-list-item").remove();
 
   let activeNode = activeContentList.getActiveNode();
@@ -314,4 +310,4 @@ $(".summary-plan-change").click(() => {
 
   $(activeNode.page_id).removeClass("hidden");
   $(activeNode.nav_elem).addClass("nav-active");
-})
+});
